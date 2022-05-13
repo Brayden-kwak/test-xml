@@ -29,6 +29,7 @@ DO NOT MODIFY
 @return boolean;
 */
 exports.isValidXML = xmlString => {
+
   if (xmlString.length === 0) {
     return false;
   }
@@ -41,10 +42,8 @@ exports.isValidXML = xmlString => {
     const word = divideStr[i] + divideStr[i + 1]; 
     const copyStr = xmlString.slice(i); 
     const RAngleBracket = copyStr.indexOf(">");  
-
-    if (LAngleBracket.length >= 0) {  
-      return false;
-    } else if (word === "<<" || word === ">>") { 
+    
+    if (word === "<<" || word === ">>") { 
       return false;
     }
 
@@ -72,6 +71,11 @@ exports.isValidXML = xmlString => {
         }
       }
     }
+  }
+  
+  if(LAngleBracket.length){
+    return false;
+  }
 
   return true;
 };
