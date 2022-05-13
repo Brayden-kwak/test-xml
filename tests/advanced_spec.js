@@ -5,10 +5,6 @@ const { isValidXML } = require("../src");
 describe("advanced validator test", () => {
   it("True", () => {
     expect(isValidXML("<img />")).toBeTruthy();
-    expect(isValidXML("<div></div>")).toBeTruthy();
-    expect(isValidXML("<a>프론트하고싶습니다만...</a>")).toBeTruthy();
-    expect(isValidXML("<div><a></a></div>")).toBeTruthy();
-    expect(isValidXML("<div></div><a></a>")).toBeTruthy();
   });
 
   it("False", () => {
@@ -18,5 +14,5 @@ describe("advanced validator test", () => {
     expect(isValidXML("<div></div><div></div>")).toBeFalsy();
     expect(isValidXML("</>")).toBeFalsy();
     expect(isValidXML("<div><span></div></span>")).toBeFalsy();
-  });
+  });  
 });

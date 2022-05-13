@@ -8,10 +8,12 @@
   },
   "author": "Vingle",
   "dependencies": {
-    "jest": "^21.2.1"
+    "jest": "^28.1.0"
   },
   "jest": {
-    "roots": ["<rootDir>/tests"],
+    "roots": [
+      "<rootDir>/tests"
+    ],
     "testRegex": ".*_spec\\.js$"
   }
 }

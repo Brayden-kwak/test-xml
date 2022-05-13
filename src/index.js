@@ -42,7 +42,7 @@ exports.isValidXML = xmlString => {
     const word = divideStr[i] + divideStr[i + 1]; 
     const copyStr = xmlString.slice(i); 
     const RAngleBracket = copyStr.indexOf(">");  
-    
+
     if (word === "<<" || word === ">>") { 
       return false;
     }
