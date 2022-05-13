@@ -44,9 +44,7 @@ exports.isValidXML = xmlString => {
 
     if (LAngleBracket.length >= 0) {  
       return false;
-    }
-
-    if (word === "<<" || word === ">>") { 
+    } else if (word === "<<" || word === ">>") { 
       return false;
     }
 
@@ -57,23 +55,23 @@ exports.isValidXML = xmlString => {
 
       if (closeBracket !== compareLAngleBracket) { 
         return false;
-      }
-      
-      if (divideStr[i] === "<") {
+      } else if (divideStr[i] === "<") {
 
-      const firstBracket = copyStr.slice(1, RAngleBracket);
+        const firstBracket = copyStr.slice(1, RAngleBracket);
 
-      if (firstBracket.slice(-1) !== '/') {
-        if (LAngleBracket.indexOf(firstBracket) >= 0) {
-          return false;
-        }
-        LAngleBracket.push(firstBracket); 
-        if (LAngleBracket.length > 2) { 
-          return false;
+        if (firstBracket.slice(-1) !== '/') {
+          if (LAngleBracket.indexOf(firstBracket) >= 0) {
+            return false;
+          }
+          
+          LAngleBracket.push(firstBracket); 
+
+          if (LAngleBracket.length > 2) { 
+            return false;
+          }
         }
       }
     }
-  }
 
   return true;
 };
